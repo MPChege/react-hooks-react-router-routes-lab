@@ -1,14 +1,21 @@
 import React from "react";
 import { directors } from "../data";
+import './App.css';
 
 function Directors() {
   return (
-    <div>
-      <nav>
-        <ul>
-          <directors to= "/directors" activeClassName="directors"> <h1> Directors Page</h1> </directors> 
-        </ul>
-      </nav>
+    <div className="directors">
+      <h1>Directors Page</h1>
+      {directors.map((director) => (
+        <div key={director.name}>
+          <h2>{director.name}</h2>
+          <ul>
+            {director.movies.map((movie) => (
+              <li key={movie}>{movie}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
   );
 }

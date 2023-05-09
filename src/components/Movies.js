@@ -1,14 +1,22 @@
 import React from "react";
 import { movies } from "../data";
+import './App.css';
 
 function Movies() {
-  return(
-    <div>
-      <nav>
-        <ul>
-          <movies to= "/movies" activeClassName="movies"> <h1> Movies Page</h1> </movies> 
-        </ul>
-      </nav>
+  return (
+    <div className="movies">
+      <h1>Movies Page</h1>
+      {movies.map((movie) => (
+        <div key={movie.title}>
+          <h2>{movie.title}</h2>
+          <p>Time: {movie.time} min</p>
+          <ul>
+            {movie.genres.map((genre) => (
+              <li key={genre}>{genre}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
   );
 }

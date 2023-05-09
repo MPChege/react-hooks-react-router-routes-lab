@@ -1,13 +1,10 @@
 import React from "react";
+import './App.css';
 
 function Home() {
   return (
-    <div>
-      <nav>
-        <ul>
-          <home to= "/home" activeClassName="home"> <h1> Home Page</h1> </home> 
-        </ul>
-      </nav>
+    <div className="home">
+      <h1>Home Page</h1>
     </div>
   );
 }

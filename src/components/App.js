@@ -1,23 +1,24 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home";
-import Actors from "./Actors";
-import Directors from "./Directors";
 import Movies from "./Movies";
+import Directors from "./Directors";
+import Actors from "./Actors";
+import './App.css';
 
 function App() {
-  return <div>{
-    <NavBar>
-      <Switch>
-        <Route exact path="/home" component={Home} />
-        <Route path="/movies/" component={Movies} />
-        <Route path="/actors" component={Actors} />
+  return (
+    <BrowserRouter>
+      <div className="app">
+        <NavBar />
+        <Route exact path="/" component={Home} />
+        <Route path="/movies" component={Movies} />
         <Route path="/directors" component={Directors} />
-
-      </Switch>
-    </NavBar>
-    }</div>;
+        <Route path="/actors" component={Actors} />
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;

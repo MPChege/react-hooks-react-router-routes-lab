@@ -1,15 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import './App.css';
 
 function NavBar() {
   return (
-    <div>
-     <NavLink exact to="/home" activeClassName="active">Home</NavLink> 
-    <NavLink exact to="/movie" activeClassName="active">Movies</NavLink>
-    <NavLink exact to="/actors" activeClassName='active'>Actors</NavLink>
-    <NavLink exact to="/directors" activeClassName='active'>Directors</NavLink>
-</div>
-);
+    <div className="navbar">
+      <NavLink exact to="/">Home</NavLink>
+      <NavLink to="/movies">Movies</NavLink>
+      <NavLink to="/directors">Directors</NavLink>
+      <NavLink to="/actors">Actors</NavLink>
+    </div>
+  );
 }
 
 export default NavBar;
